@@ -1,125 +1,160 @@
-# Starknet Paymaster Voting DApp
+# Aminia
 
-A gasless voting decentralized application built on Starknet that allows users to vote without paying transaction fees, powered by paymaster functionality.
+**Secure Escrow Services for Kenya's Social Commerce Revolution**
 
-## ✨ Features
+![Uploading image.png…]() 
 
-- **Gasless Voting**: Vote without paying gas fees thanks to paymaster integration
-- **Real-time Vote Tracking**: See current vote counts updated in real-time
-- **Wallet Integration**: Connect your Starknet wallet seamlessly
-- **Modern UI**: Clean, responsive interface with purple and black theme
-- **Secure**: Built on Starknet for maximum security and decentralization
+## 🌍 Overview
 
-## 🚀 Getting Started
+Aminia is a blockchain-powered escrow platform that eliminates fraud and builds trust in Kenya's rapidly growing social commerce ecosystem. By leveraging Starknet smart contracts integrated with M-Pesa, we provide secure, automated escrow services for e-commerce transactions on TikTok, Instagram, and other social platforms.
+
+## 📊 Market Opportunity
+
+- **$900M** e-commerce market in Kenya
+- **12.86%** annual growth in social commerce
+- **33 billion** annual M-Pesa transactions (56% of Kenya's GDP)
+- **32M** Instagram users in Kenya
+- Growing TikTok merchant ecosystem
+
+## 🚀 Key Features
+
+- **🔒 Secure Escrow**: Funds held safely until delivery confirmation
+- **📱 M-Pesa Integration**: Familiar payment experience via USSD/mobile
+- **⚡ Automated Settlements**: Smart contracts handle payment releases
+- **🛡️ Fraud Protection**: Neutral third-party transaction oversight
+- **📦 Delivery Tracking**: Integrated confirmation system
+- **⚖️ Dispute Resolution**: Built-in mediation process
+
+## 🛠️ Technology Stack
+
+- **Blockchain**: Starknet smart contracts
+- **Oracles**: Pragman Oracle for external data feeds
+- **Payment Gateway**: M-Pesa API integration
+- **Mobile Interface**: USSD and mobile app support
+
+## 📋 How It Works
+
+### Transaction Flow
+
+1. **Order Placement** 🛒
+   - Customer places order with social commerce vendor
+   - Initiates M-Pesa payment through Aminia
+
+2. **Escrow Activation** 🔐
+   - Smart contract securely holds funds
+   - Both parties receive transaction notifications
+
+3. **Product Shipment** 📦
+   - Vendor ships product
+   - Provides delivery confirmation to system
+
+4. **Delivery Confirmation** ✅
+   - Customer confirms receipt via USSD/mobile app
+   - 7-day confirmation window
+
+5. **Payment Release** 💰
+   - Smart contract automatically releases payment to vendor
+   - Funds transferred to vendor's M-Pesa account
+
+6. **Dispute Handling** ⚖️
+   - Disputed transactions remain in escrow
+   - Auto-release after 7 days if no customer response
+
+## 🎯 Target Users
+
+### For Customers
+- **Safe Shopping**: Protection against fraud and non-delivery
+- **Familiar Interface**: Use M-Pesa as usual
+- **Dispute Protection**: Secure resolution process
+
+### For Merchants
+- **Trust Building**: Increase customer confidence
+- **Automated Payments**: Streamlined settlement process
+- **Fraud Reduction**: Minimize payment disputes
+
+### For Platforms
+- **Enhanced Security**: Reduce platform liability
+- **User Retention**: Improved transaction success rates
+- **Market Growth**: Enable larger transaction volumes
+
+## 🔧 Getting Started
 
 ### Prerequisites
+- M-Pesa account
+- Compatible mobile device
+- Access to supported social commerce platforms
 
-- Node.js (v22 or higher)
-- A Starknet wallet (ArgentX, Braavos, etc.)
-- Git
+### For Merchants
+1. Register your business with Aminia
+2. Integrate payment links with your social commerce posts
+3. Configure delivery confirmation preferences
+4. Start accepting secure payments
 
-### Installation
+### For Customers
+1. Shop on your favorite social platforms
+2. Look for Aminia-secured payment options
+3. Pay via M-Pesa as usual
+4. Confirm delivery when you receive your order
 
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd paymaster-voting-dapp
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🔧 Usage
-
-1. **Connect Wallet**: Click "Connect Wallet" in the top navigation
-2. **Set Amount**: Enter the number of votes you want to cast
-3. **Vote**: Click "Increase Votes" or "Decrease Votes"
-4. **No Gas Fees**: Enjoy gasless transactions thanks to the paymaster!
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js, React, TypeScript
-- **Styling**: Tailwind CSS
-- **Blockchain**: Starknet
-- **Wallet**: Starknet React
-- **UI Components**: Shadcn/ui
-
-## 📂 Project Structure
+## 🏗️ Technical Architecture
 
 ```
-├── components/
-│   ├── Navbar.tsx           # Navigation component
-│   ├── VotingInterface.tsx  # Main voting interface
-│   ├── IncreaseVotesButton.tsx
-│   ├── DecreaseVotesButton.tsx
-│   ├── WalletModal.tsx
-│   └── AccountModal.tsx
-├── app/
-│   ├── hooks/
-│   │   └── use-blockchain.ts # Blockchain interaction hooks
-│   └── page.tsx             # Main page
-├── abi/
-│   └── voting_abi.ts        # Smart contract ABI
-└── globals.css              # Global styles
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│  Social Media   │    │     Aminia       │    │     M-Pesa      │
+│   Platforms     │◄──►│   Smart Contract │◄──►│      API        │
+│ (TikTok/Insta)  │    │   (Starknet)     │    │                 │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+                                │
+                                ▼
+                       ┌──────────────────┐
+                       │ Pragman Oracle   │
+                       │ (External Data)  │
+                       └──────────────────┘
 ```
 
-## 🔗 Smart Contract
+## 📈 Benefits
 
-The DApp interacts with a Starknet smart contract that handles:
-- Vote counting
-- Vote increasing/decreasing
-- Paymaster functionality for gasless transactions
+### Security
+- Blockchain-based transaction immutability
+- Multi-signature smart contract protection
+- Encrypted communication channels
 
-## 🎨 Features
+### Accessibility
+- USSD interface for feature phones
+- Mobile app for smartphones
+- Integration with existing M-Pesa workflows
 
-### Paymaster Integration
-- Users can vote without holding ETH for gas fees
-- Seamless user experience with no transaction costs
-- Sponsored transactions through paymaster service
+### Efficiency
+- Automated payment processing
+- Reduced transaction disputes
+- Streamlined delivery confirmation
 
-### Voting System
-- Increase or decrease vote counts
-- Real-time vote display
-- Input validation and error handling
+## 🌟 Impact Goals
+
+- **Reduce Fraud**: Minimize transaction disputes in social commerce
+- **Build Trust**: Create confidence between buyers and sellers
+- **Enable Growth**: Unlock the full potential of Kenya's digital economy
+- **Financial Inclusion**: Provide secure payment options for all users
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Support
+## 📞 Contact
 
-If you have any questions or need help:
-- Open an issue on GitHub
-- Check the [Starknet documentation](https://docs.starknet.io/)
-- Join the [Starknet Discord](https://discord.gg/starknet)
+- **Website**: [aminia]([https://aminia.co.ke](https://aminia-zqxu.vercel.app/))
+- **Twitter**: [@Am1n1a](https://x.com/Am1n1a)
 
-## 🌟 Acknowledgments
+## 🙏 Acknowledgments
 
-- [Starknet](https://starknet.io/) for the amazing blockchain platform
-- [ArgentX](https://www.argent.xyz/) for wallet integration
-- The Starknet community for support and resources
+- Starknet ecosystem for blockchain infrastructure
+- Safaricom for M-Pesa API access
+- Kenya's vibrant social commerce community
 
 ---
 
-Built with ❤️ on Starknet
+**Building Trust in Digital Commerce, One Transaction at a Time** 🚀
