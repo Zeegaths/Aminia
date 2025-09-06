@@ -21,21 +21,21 @@ const VendorRegistration = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -52,7 +52,7 @@ const VendorRegistration = () => {
     },
     {
       icon: TrendingUp,
-      title: "Market Validation", 
+      title: "Market Validation",
       description: "Access to Kenya's $900M e-commerce market growing at 12.86% annually",
       stat: "$900M+"
     },
@@ -85,7 +85,7 @@ const VendorRegistration = () => {
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-        
+
         <Card className="max-w-md w-full text-center border-green-500/30 bg-gradient-to-br from-green-900/90 via-green-800/80 to-slate-900/90 backdrop-blur-2xl shadow-2xl shadow-green-500/20 relative z-10">
           <CardContent className="pt-12 pb-8">
             <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
@@ -99,7 +99,7 @@ const VendorRegistration = () => {
                 Your application is being reviewed by our team. You'll hear from us within 24 hours!
               </p>
             </div>
-            <Button 
+            <Button
               onClick={() => setIsRegistered(false)}
               className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 hover:from-green-700 hover:via-emerald-700 hover:to-green-800 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-500/30"
             >
@@ -119,9 +119,9 @@ const VendorRegistration = () => {
         <div className="absolute top-40 right-32 w-1 h-1 bg-emerald-400 rounded-full animate-pulse delay-300"></div>
         <div className="absolute bottom-32 left-16 w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse delay-700"></div>
         <div className="absolute bottom-20 right-20 w-2 h-2 bg-emerald-300 rounded-full animate-ping delay-1000"></div>
-        
+
         {/* Mouse follower gradient */}
-        <div 
+        <div
           className="absolute w-96 h-96 bg-gradient-to-r from-green-500/5 to-emerald-500/5 rounded-full blur-3xl transition-all duration-1000 ease-out"
           style={{
             left: mousePosition.x - 192,
@@ -159,8 +159,8 @@ const VendorRegistration = () => {
             </div>
 
             <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-12 animate-fade-in delay-600">
-              Transform your social presence into <span className="text-green-400 font-semibold">profitable commerce</span>. 
-              Connect Instagram & TikTok to Kenya's most trusted blockchain-powered marketplace protecting 
+              Transform your social presence into <span className="text-green-400 font-semibold">profitable commerce</span>.
+              Connect Instagram & TikTok to Kenya's most trusted blockchain-powered marketplace protecting
               <span className="text-emerald-400 font-semibold"> $33 billion</span> in annual transactions.
             </p>
 
@@ -183,13 +183,13 @@ const VendorRegistration = () => {
           {/* Features Grid with enhanced design */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {features.map((feature, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="border-slate-700/50 bg-gradient-to-br from-slate-800/60 via-slate-900/40 to-slate-800/60 backdrop-blur-sm hover:border-green-500/50 transition-all duration-500 group relative overflow-hidden hover:scale-105 transform"
               >
                 {/* Background glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 <CardContent className="p-8 text-center relative z-10">
                   <div className="relative mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-green-500 via-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-green-500/20">
@@ -218,7 +218,7 @@ const VendorRegistration = () => {
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600"></div>
           <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full blur-xl"></div>
-          
+
           <CardHeader className="text-center pb-8 pt-12 relative">
             <CardTitle className="text-4xl font-bold bg-gradient-to-r from-white via-green-100 to-emerald-100 bg-clip-text text-transparent mb-2">
               Register Your Business
@@ -226,7 +226,7 @@ const VendorRegistration = () => {
             <p className="text-slate-400 text-lg">Connect your social media and unlock Kenya's digital marketplace</p>
             <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
           </CardHeader>
-          
+
           <CardContent className="px-12 pb-12">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Business Information Section */}
@@ -237,7 +237,7 @@ const VendorRegistration = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white">Business Information</h3>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium bg-gradient-to-r from-green-300 to-emerald-300 bg-clip-text text-transparent">
@@ -330,7 +330,7 @@ const VendorRegistration = () => {
                   <h3 className="text-xl font-bold text-white">Social Media Integration</h3>
                   <div className="flex-1 h-px bg-gradient-to-r from-green-500/50 to-transparent"></div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="block text-sm font-medium text-white flex items-center gap-2">
@@ -370,7 +370,7 @@ const VendorRegistration = () => {
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  rows="4"
+                  // rows="4"
                   className="w-full bg-slate-900/50 border-2 border-slate-600/50 focus:border-green-500 text-white rounded-xl px-4 py-3 resize-none transition-all duration-300 focus:shadow-green-500/20 focus:shadow-lg"
                   placeholder="Tell us about your business, what you sell, and your goals..."
                 />
@@ -384,7 +384,7 @@ const VendorRegistration = () => {
               >
                 {/* Button background animation */}
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                
+
                 {isSubmitting ? (
                   <div className="flex items-center justify-center gap-3 relative z-10">
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
