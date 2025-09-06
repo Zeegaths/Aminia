@@ -2,7 +2,7 @@
 
 **Secure Escrow Services for Kenya's Social Commerce Revolution**
 
-![Uploading image.png…]() 
+![Aminia](https://aminia-zqxu.vercel.app/aminia.png)
 
 ## 🌍 Overview
 
