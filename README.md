@@ -2,6 +2,8 @@
 
 **Secure Escrow Services for Kenya's Social Commerce Revolution**
 
+![Uploading Screenshot from 2025-09-06 12-13-01.png…]()
+
 ## 🌍 Overview
 
 Aminia is a blockchain-powered escrow platform that eliminates fraud and builds trust in Kenya's rapidly growing social commerce ecosystem. By leveraging Starknet smart contracts integrated with M-Pesa, we provide secure, automated escrow services for e-commerce transactions on TikTok, Instagram, and other social platforms.
